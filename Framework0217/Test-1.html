@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选按钮test</title>
+    
+</head>
+<body>
+    <div id="container"></div>
+    <div id="control"></div>
+</body>
+<script src="imitate.js"></script>
+<script>
+
+	I( '#container' )[ 0 ].innerHTML = 
+
+	F.map( ['Test','Test','Test','Test','Test','Test'],function ( v, i ) { 
+		return '<input type="checkbox" >' + v + '<br />';
+	 }).join( '' );
+	
+	//添加按钮
+	I( '#control' )[ 0 ].innerHTML = '<button id="btn"> All </button> ';
+
+	//添加事件
+	I( '#btn' )[ 0 ].onclick = function () { 
+		I( '#container input' ).each(function () { 
+			this.checked = true;
+		 });
+	 };
+</script>
+
+</html>
